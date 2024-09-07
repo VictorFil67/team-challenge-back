@@ -100,24 +100,10 @@ const logout = async (req, res) => {
   res.status(204).json();
 };
 
-// const updateSubscription = async (req, res) => {
-//   const { email } = req.user;
-//   const result = await updateSubscriptionByFilter({ email }, req.body);
-//   const { subscription } = result;
-//   if (!result) {
-//     throw HttpError(404);
-//   }
-//   res.status(200).json({
-//     email,
-//     subscription,
-//   });
-// };
-
 export default {
   signup: ctrlWrapper(signup),
   signin: ctrlWrapper(signin),
   getCurrent: ctrlWrapper(getCurrent),
   getrefreshCurrent: ctrlWrapper(getrefreshCurrent),
   logout: ctrlWrapper(logout),
-  // updateSubscription: ctrlWrapper(updateSubscription),
 };
