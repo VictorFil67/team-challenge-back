@@ -7,18 +7,18 @@ const { JWT_SECRET } = process.env;
 
 const authenticateWithRefresh = async (req, res, next) => {
   const { authorization } = req.headers;
-  console.log(authorization);
+  // console.log(authorization);
   const [bearer, refreshToken] = authorization.split(" ");
-  console.log(bearer);
-  console.log(refreshToken);
+  // console.log(bearer);
+  // console.log(refreshToken);
   if (bearer !== "Bearer") {
     return next(HttpError(401, "No Bearer"));
   }
   try {
     const { id } = jwt.verify(refreshToken, JWT_SECRET);
-    console.log(id);
+    // console.log(id);
     const user = await findUserById(id);
-    if (!user || !user.refreshToken) {
+    if (!user || user.refreshToken !== refreshToken) {
       return next(HttpError(401, "Not authorized user"));
     }
     req.user = user;
