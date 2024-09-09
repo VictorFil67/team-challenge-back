@@ -1,10 +1,5 @@
 import {
-  // listContacts,
-  // getContactById,
-  // removeContact,
   addContact,
-  // updateContactById,
-  // updateStatusContactById,
   listContactsByFilter,
   getContactByFilter,
   removeContactByFilter,
