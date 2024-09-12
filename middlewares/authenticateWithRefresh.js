@@ -11,8 +11,6 @@ const authenticateWithRefresh = async (req, res, next) => {
     return next(HttpError(401));
   }
   const [bearer, refreshToken] = authorization.split(" ");
-  // console.log(bearer);
-  // console.log(refreshToken);
   if (bearer !== "Bearer") {
     return next(HttpError(401, "No Bearer"));
   }
