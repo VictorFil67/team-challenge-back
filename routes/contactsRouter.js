@@ -18,7 +18,7 @@ const {
   deleteContact,
   createContact,
   updateContact,
-  updateStatusContact,
+  // updateStatusContact,
 } = contactsControllers;
 contactsRouter.get("/", getAllContacts);
 
@@ -35,6 +35,6 @@ contactsRouter.put(
   updateContact
 );
 
-contactsRouter.patch("/:id/favorite", isValidId, updateStatusContact);
+// contactsRouter.patch("/:id/favorite", isValidId, updateStatusContact);
 
 export default contactsRouter;

@@ -3,7 +3,7 @@ import {
   listContactsByFilter,
   getContactByFilter,
   removeContactByFilter,
-  updateStatusContactByFilter,
+  // updateStatusContactByFilter,
   updateContactByFilter,
 } from "../services/contactsServices.js";
 import HttpError from "../helpers/HttpError.js";
@@ -61,18 +61,18 @@ const updateContact = async (req, res) => {
   res.status(200).json(result);
 };
 
-const updateStatusContact = async (req, res) => {
-  const { id } = req.params;
-  const { _id: owner } = req.user;
-  const result = await updateStatusContactByFilter(
-    { _id: id, owner },
-    req.body
-  );
-  if (!result) {
-    throw HttpError(404);
-  }
-  res.status(200).json(result);
-};
+// const updateStatusContact = async (req, res) => {
+//   const { id } = req.params;
+//   const { _id: owner } = req.user;
+//   const result = await updateStatusContactByFilter(
+//     { _id: id, owner },
+//     req.body
+//   );
+//   if (!result) {
+//     throw HttpError(404);
+//   }
+//   res.status(200).json(result);
+// };
 
 export default {
   getAllContacts: ctrlWrapper(getAllContacts),
@@ -80,5 +80,5 @@ export default {
   deleteContact: ctrlWrapper(deleteContact),
   createContact: ctrlWrapper(createContact),
   updateContact: ctrlWrapper(updateContact),
-  updateStatusContact: ctrlWrapper(updateStatusContact),
+  // updateStatusContact: ctrlWrapper(updateStatusContact),
 };
