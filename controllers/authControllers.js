@@ -138,4 +138,5 @@ export default {
   getCurrent: ctrlWrapper(getCurrent),
   getrefreshCurrent: ctrlWrapper(getrefreshCurrent),
   logout: ctrlWrapper(logout),
+  forgotPassword: ctrlWrapper(forgotPassword),
 };
