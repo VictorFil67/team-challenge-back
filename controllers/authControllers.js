@@ -1,4 +1,9 @@
-import { register, setToken, setTokens } from "../services/authServices.js";
+import {
+  register,
+  setToken,
+  setTokens,
+  updateUser,
+} from "../services/authServices.js";
 import ctrlWrapper from "../decorators/ctrlWrapper.js";
 import HttpError from "../helpers/HttpError.js";
 import bcrypt from "bcrypt";
@@ -10,6 +15,7 @@ import {
 import "dotenv/config"; // Вместо этого можно:
 // import dotenv from "dotenv";
 // dotenv.config();
+import { generateRandomCode } from "../helpers/generateRandomCode.js";
 
 const { JWT_SECRET } = process.env;
 
