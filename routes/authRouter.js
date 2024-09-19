@@ -11,8 +11,14 @@ import authenticateWithRefresh from "../middlewares/authenticateWithRefresh.js";
 
 const authRouter = express.Router();
 
-const { signup, signin, getCurrent, getrefreshCurrent, logout } =
-  authControllers;
+const {
+  signup,
+  signin,
+  getCurrent,
+  getrefreshCurrent,
+  logout,
+  forgotPassword,
+} = authControllers;
 
 authRouter.post("/register", validateBody(signupSchema), signup);
 authRouter.post("/login", validateBody(signinSchema), signin);

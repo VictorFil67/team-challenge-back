@@ -16,8 +16,9 @@ import "dotenv/config"; // Вместо этого можно:
 // import dotenv from "dotenv";
 // dotenv.config();
 import { generateRandomCode } from "../helpers/generateRandomCode.js";
+import sendEmail from "../helpers/sendEmail.js";
 
-const { JWT_SECRET } = process.env;
+const { JWT_SECRET, DEPLOY_HOST } = process.env;
 
 const signup = async (req, res) => {
   const { email } = req.body;
