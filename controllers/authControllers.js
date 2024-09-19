@@ -139,6 +139,25 @@ const forgotPassword = async (req, res) => {
   });
 };
 
+const updatePassword = async (req, res) => {
+  const { tempCode } = req.params;
+  const { newPassword } = req.body;
+
+  const user = await findUser({ tempCode });
+  if (!user) {
+    throw HttpError(404, "User not found");
+  }
+
+  await recoverPassword(tempCode, {
+    password: newPassword,
+    tempCode: undefined,
+  });
+
+  res.status(200).json({
+    message: "Your password has been updated successfully",
+  });
+};
+
 export default {
   signup: ctrlWrapper(signup),
   signin: ctrlWrapper(signin),
@@ -146,4 +165,5 @@ export default {
   getrefreshCurrent: ctrlWrapper(getrefreshCurrent),
   logout: ctrlWrapper(logout),
   forgotPassword: ctrlWrapper(forgotPassword),
+  updatePassword: ctrlWrapper(updatePassword),
 };
