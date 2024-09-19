@@ -101,7 +101,7 @@ const getrefreshCurrent = async (req, res) => {
 
 const logout = async (req, res) => {
   const { _id } = req.user;
-  await setToken(_id);
+  await setTokens(_id);
   res.status(204).json();
 };
 
