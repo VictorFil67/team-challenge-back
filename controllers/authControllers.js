@@ -1,4 +1,5 @@
 import {
+  recoverPassword,
   register,
   setToken,
   setTokens,
@@ -8,10 +9,7 @@ import ctrlWrapper from "../decorators/ctrlWrapper.js";
 import HttpError from "../helpers/HttpError.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import {
-  findUser,
-  updateSubscriptionByFilter,
-} from "../services/userServices.js";
+import { findUser } from "../services/userServices.js";
 import "dotenv/config"; // Вместо этого можно:
 // import dotenv from "dotenv";
 // dotenv.config();
