@@ -21,6 +21,10 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Residential complex is required"],
     },
+    section: {
+      type: String,
+      required: [true, "Section is required"],
+    },
     apartment: {
       type: Number,
       required: [true, "Apartment nomber is required"],
