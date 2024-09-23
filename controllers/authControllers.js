@@ -1,7 +1,7 @@
 import {
   recoverPassword,
   register,
-  setToken,
+  // setToken,
   setTokens,
   updateUser,
 } from "../services/authServices.js";
